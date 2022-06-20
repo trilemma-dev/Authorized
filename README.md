@@ -51,7 +51,7 @@ which does not involve creating an `Authorization` instance.
 Otherwise you'll typically want to initialize an instance via ``Authorization/init()`` and then subsequently request
 rights with ``Authorization/requestRights(_:environment:options:)-5wtuy`` or an asynchronous equivalent.
 
-> Tip: `Authorization` conforms to [`Codable`](https://developer.apple.com/documentation/swift/codable) and so can be
+`Authorization` conforms to [`Codable`](https://developer.apple.com/documentation/swift/codable) and so can be
 serialized and deserialized for convenient transference between processes.
 
 Ultimately `Authorization` is a wrapper around 
@@ -60,22 +60,5 @@ underlying reference can be accessed via ``Authorization/authorizationRef``. How
 reference is bound to its containing `Authorization` instance.
 
 ## Sandboxing
-> Warning: Most of this framework is *not* available to sandboxed processes because of privilege escalation.
-
-The exception to this is reading or existence checking a right definition in the Policy Database.
-
-## Topics
-### Authorization
-- ``Authorization``
-- ``AuthorizationRight``
-- ``AuthorizationEnvironmentEntry``
-- ``AuthorizationOption``
-### Authorization Policy Database
-- ``AuthorizationRight``
-- ``AuthorizationRightRule``
-- ``CannedAuthorizationRightRules``
-- ``AuthorizationRightDefinition``
-- ``AuthorizationRightDefinitionClass``
-- ``AuthorizationMechanism``
-### Authorization Errors
-- ``AuthorizationError``
+Most of this framework is *not* available to sandboxed processes because of privilege escalation. The exception to this
+is reading or existence checking a right definition in the Policy Database.
