@@ -33,7 +33,7 @@ example update their implementation of the `authenticateAsAdmin` rule to use Tou
 authenticate they will see the message "MyApp would like to perform a special action."
 
 There are several optional parameters not used in this example, see 
-``AuthorizationRight/createOrUpdateDefinition(rules:authorization:descriptionKey:bundle:localeTableName:comment:)`` for
+`AuthorizationRight.createOrUpdateDefinition(rules:authorization:descriptionKey:bundle:localeTableName:comment:)` for
 details.
 
 If you need to create a rule which is not solely composed of already existing rules, you must create an authorization
@@ -43,20 +43,20 @@ for more information.
 
 ## Authorization
 In some more advanced circumstances you may to want directly interact with macOS's Security Server via the
-``Authorization`` class.
+`Authorization` class.
 
-If you only need to check if a user can perform an operation, use ``Authorization/checkRights(_:environment:options:)``
+If you only need to check if a user can perform an operation, use `Authorization.checkRights(_:environment:options:)`
 which does not involve creating an `Authorization` instance.
 
-Otherwise you'll typically want to initialize an instance via ``Authorization/init()`` and then subsequently request
-rights with ``Authorization/requestRights(_:environment:options:)-5wtuy`` or an asynchronous equivalent.
+Otherwise you'll typically want to initialize an instance via `Authorization.init()` and then subsequently request
+rights with `Authorization.requestRights(_:environment:options:)`.
 
 `Authorization` conforms to [`Codable`](https://developer.apple.com/documentation/swift/codable) and so can be
 serialized and deserialized for convenient transference between processes.
 
 Ultimately `Authorization` is a wrapper around 
  [`AuthorizationRef`](https://developer.apple.com/documentation/security/authorizationref) and so if needed this
-underlying reference can be accessed via ``Authorization/authorizationRef``. However, please note the lifetime of this
+underlying reference can be accessed via `Authorization.authorizationRef`. However, please note the lifetime of this
 reference is bound to its containing `Authorization` instance.
 
 ## Sandboxing
