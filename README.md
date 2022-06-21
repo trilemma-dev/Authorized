@@ -32,9 +32,7 @@ of this documentation being written this means the user needing to type in a pas
 example update their implementation of the `authenticateAsAdmin` rule to use Touch ID.) When the user is asked to
 authenticate they will see the message "MyApp would like to perform a special action."
 
-There are several optional parameters not used in this example, see 
-`AuthorizationRight.createOrUpdateDefinition(rules:authorization:descriptionKey:bundle:localeTableName:comment:)` for
-details.
+There are several optional parameters not used in this example, see documentation for details.
 
 If you need to create a rule which is not solely composed of already existing rules, you must create an authorization
 plug-in, which is not covered by this framework. See
